@@ -1,14 +1,15 @@
 ﻿namespace apiAddressSecurity.Models
 {
     using System.Data.Entity;
+    using System.Linq;
 
-    public class DataContext : DbContext
+    public class DataContext:DbContext
     {
-        public DataContext() : base("DefaultConnection")
+        public DataContext():base("DefaultConnection")
         {
 
         }
 
-        public System.Data.Entity.DbSet<apiAddressSecurity.Models.Book> Books { get; set; }
+        public IQueryable<Book> Books { get; internal set; }
     }
 }

@@ -17,14 +17,12 @@ namespace apiAddressSecurity.Controllers
         private DataContext db = new DataContext();
 
         // GET: api/Books
-        [Authorize]
         public IQueryable<Book> GetBooks()
         {
             return db.Books;
         }
 
         // GET: api/Books/5
-        [Authorize]
         [ResponseType(typeof(Book))]
         public IHttpActionResult GetBook(int id)
         {
@@ -38,7 +36,6 @@ namespace apiAddressSecurity.Controllers
         }
 
         // PUT: api/Books/5
-        [Authorize]
         [ResponseType(typeof(void))]
         public IHttpActionResult PutBook(int id, Book book)
         {
@@ -74,7 +71,6 @@ namespace apiAddressSecurity.Controllers
         }
 
         // POST: api/Books
-        [Authorize]
         [ResponseType(typeof(Book))]
         public IHttpActionResult PostBook(Book book)
         {
@@ -90,7 +86,6 @@ namespace apiAddressSecurity.Controllers
         }
 
         // DELETE: api/Books/5
-        [Authorize]
         [ResponseType(typeof(Book))]
         public IHttpActionResult DeleteBook(int id)
         {
